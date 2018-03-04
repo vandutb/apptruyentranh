@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.hi.apptruyentranh.OBJECTS.ObjCategory;
 import com.example.hi.apptruyentranh.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -35,8 +36,14 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.holder
     }
 
     @Override
-    public void onBindViewHolder(holder holder, int position) {
+    public void onBindViewHolder(holder holder, final int position) {
         holder.name.setText(categories.get(position).getCategoryName());
+        holder.backgroud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClickListener.onItemClickListenner(position);
+            }
+        });
     }
 
     @Override
@@ -53,5 +60,12 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.holder
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+    }
+    public onItemClickListener onItemClickListener;
+    public void onRecyclerViewListener(onItemClickListener onItemClickListener){
+        this.onItemClickListener = onItemClickListener;
+    }
+    public interface onItemClickListener{
+        void onItemClickListenner(int position);
     }
 }

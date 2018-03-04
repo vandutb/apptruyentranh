@@ -23,6 +23,7 @@ import butterknife.ButterKnife;
 public class AdapterHome extends RecyclerView.Adapter<AdapterHome.holder>{
     private List<ObjHome> objHomeList;
     private Context context;
+    private onRecyclerviewListener onRecyclerviewListener;
     public AdapterHome(List<ObjHome> objHomes) {
         objHomeList = objHomes;
     }
@@ -36,6 +37,11 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.holder>{
 
     @Override
     public void onBindViewHolder(holder holder, int position) {
+        if (position == objHomeList.size() - 1) {
+            onRecyclerviewListener.onScrollToLastItemListener(true);
+        }else {
+            onRecyclerviewListener.onScrollToLastItemListener(false);
+        }
         Picasso.with(context).load(objHomeList.get(position).getUrl()).error(R.drawable.img_noimage2x).into(holder.infoImg);
     }
 
@@ -52,5 +58,12 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.holder>{
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
+    }
+    public AdapterHome onScrollRecyclerView(onRecyclerviewListener onRecyclerviewListener){
+        this.onRecyclerviewListener = onRecyclerviewListener;
+        return this;
+    }
+    public interface onRecyclerviewListener{
+        void onScrollToLastItemListener(boolean islastItem);
     }
 }

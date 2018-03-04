@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/black"
+    app:bbn_alwaysShowLabels="true"
+    app:bbn_itemColorActive="@android:color/white"
+    app:bbn_itemColorDisabled="#33ffffff"
+    app:bbn_itemColorInactive="#99ffffff"
+    app:bbn_rippleColor="#ccffffff">
+    <item
+        android:id="@+id/home"
+        android:color="@color/colorPrimaryDark"
+        android:icon="@drawable/tab_home2x"
+        android:title="@string/home"
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/category"
+        android:color="@color/colorPrimaryDark"
+        android:icon="@drawable/tab_try2x"
+        android:title="@string/category"
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/noti"
+        android:color="@color/colorPrimaryDark"
+        android:icon="@drawable/tab_noti2x"
+        android:title="@string/noti"
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+</menu>

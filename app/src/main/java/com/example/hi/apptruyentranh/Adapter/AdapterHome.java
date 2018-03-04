@@ -5,11 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
 
-import com.example.hi.apptruyentranh.OBJECTS.ObjCategory;
+import com.example.hi.apptruyentranh.OBJECTS.ObjHome;
 import com.example.hi.apptruyentranh.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -20,38 +20,37 @@ import butterknife.ButterKnife;
  * Created by hi on 3/4/2018.
  */
 
-public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.holder> {
+public class AdapterHome extends RecyclerView.Adapter<AdapterHome.holder>{
+    private List<ObjHome> objHomeList;
     private Context context;
-    private List<ObjCategory> categories;
-    public AdapterCategory(List<ObjCategory> categories) {
-        this.categories = categories;
+    public AdapterHome(List<ObjHome> objHomes) {
+        objHomeList = objHomes;
     }
 
     @Override
     public holder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
-        View view = LayoutInflater.from(context).inflate(R.layout.item_category,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_item_home,parent,false);
         return new holder(view);
     }
 
     @Override
     public void onBindViewHolder(holder holder, int position) {
-        holder.name.setText(categories.get(position).getCategoryName());
+        Picasso.with(context).load(objHomeList.get(position).getUrl()).error(R.drawable.img_noimage2x).into(holder.infoImg);
     }
+
 
     @Override
     public int getItemCount() {
         return 0;
     }
 
-    public class holder extends RecyclerView.ViewHolder{
-        @BindView(R.id.bbn_background)
-        RelativeLayout backgroud;
-        @BindView(R.id.name_item)
-        TextView name;
+    public class holder extends RecyclerView.ViewHolder {
+        @BindView(R.id.info_img)
+        ImageView infoImg;
         public holder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
+            ButterKnife.bind(this,itemView);
         }
     }
 }

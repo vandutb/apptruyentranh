@@ -4,7 +4,7 @@ package com.example.hi.apptruyentranh.OBJECTS;
  * Created by hi on 3/4/2018.
  */
 
-public class Category {
+public class ObjCategory {
     private String id;
     private String categoryName;
     private String categoryUrl;
@@ -17,7 +17,7 @@ public class Category {
         return id;
     }
 
-    public Category setId(String id) {
+    public ObjCategory setId(String id) {
         this.id = id;
         return this;
     }
@@ -26,7 +26,7 @@ public class Category {
         return categoryName;
     }
 
-    public Category setCategoryName(String categoryName) {
+    public ObjCategory setCategoryName(String categoryName) {
         this.categoryName = categoryName;
         return this;
     }
@@ -35,7 +35,7 @@ public class Category {
         return categoryUrl;
     }
 
-    public Category setCategoryUrl(String categoryUrl) {
+    public ObjCategory setCategoryUrl(String categoryUrl) {
         this.categoryUrl = categoryUrl;
         return this;
     }
@@ -44,7 +44,7 @@ public class Category {
         return totalOfPage;
     }
 
-    public Category setTotalOfPage(int totalOfPage) {
+    public ObjCategory setTotalOfPage(int totalOfPage) {
         this.totalOfPage = totalOfPage;
         return this;
     }
@@ -53,7 +53,7 @@ public class Category {
         return cachingPage;
     }
 
-    public Category setCachingPage(int cachingPage) {
+    public ObjCategory setCachingPage(int cachingPage) {
         this.cachingPage = cachingPage;
         return this;
     }
@@ -62,7 +62,7 @@ public class Category {
         return categoryImageUrl;
     }
 
-    public Category setCategoryImageUrl(String categoryImageUrl) {
+    public ObjCategory setCategoryImageUrl(String categoryImageUrl) {
         this.categoryImageUrl = categoryImageUrl;
         return this;
     }
@@ -71,7 +71,7 @@ public class Category {
         return actionListChapter;
     }
 
-    public Category setActionListChapter(String actionListChapter) {
+    public ObjCategory setActionListChapter(String actionListChapter) {
         this.actionListChapter = actionListChapter;
         return this;
     }
